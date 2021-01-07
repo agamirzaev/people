@@ -15,7 +15,6 @@ interface PeopleContract {
 
     interface Presenter : BasePresenter<View> {
         fun loadUser(page: Int)
-        fun loadUserPage(page: Int)
         fun loadSearchUser(name: String)
 
     }

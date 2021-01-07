@@ -41,35 +41,6 @@ class PeoplePresenter (private val dataManager: DataManager) :
         }
     }
 
-    override fun loadUserPage(page: Int) {
-        mvpView.let { it ->
-            it?.showProgress()
-            call = dataManager.getUserList(page)
-            call.enqueue(object : Callback<com.example.peoplelist.data.model.Response> {
-
-                override fun onResponse(
-                    call: Call<com.example.peoplelist.data.model.Response>,
-                    response: Response<com.example.peoplelist.data.model.Response>
-                ) {
-                    it?.hideProgress()
-                    if (response.isSuccessful) {
-                        response.body()?.let { res ->
-                            it?.showUsersPage(response.body()?.getResults())
-                        }
-                    }
-                }
-
-                override fun onFailure(
-                    call: Call<com.example.peoplelist.data.model.Response>,
-                    t: Throwable
-                ) {
-                    it?.hideProgress()
-                    it?.noConnection()
-                }
-            })
-        }
-    }
-
     override fun loadSearchUser(name: String) {
         mvpView.let { it ->
             call = dataManager.getUserSearchList(name)
