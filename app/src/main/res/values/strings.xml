@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">People List</string>
+    <string name="noConnection">Нет подключение интернета</string>
+    <string name="titleToolbarMainActivity">Люди</string>
+    <string name="toolbarInfoUserActivity">Информация о профиле</string>
+</resources>
