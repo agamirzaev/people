@@ -65,14 +65,6 @@ class MainActivity : AppCompatActivity(), PeopleContract.View {
                         previousItem = totalItemCount
 
                     }
-
-//                    if (!isLoading) {
-//                        if ((visbileItem + pastVisibleItem) >= totalItemCount && pastVisibleItem >= 0) {
-//                            isLoading = true
-//                            pageNumber++
-//                            presenter.loadUser(pageNumber)
-//                        }
-//                    }
                     if (!isLoading && (totalItemCount - visbileItem) <= (pastVisibleItem + viewThreshold) && pageNumber < 10) {
                         isLoading = true
                         pageNumber++
